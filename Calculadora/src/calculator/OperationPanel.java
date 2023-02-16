@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class OperationPanel extends JPanel implements ActionListener {
 
-	private String op;
+	private char op;
 	private double value1;
 	private double value2;
 	
@@ -52,8 +52,17 @@ public class OperationPanel extends JPanel implements ActionListener {
 		btClear.setBorder(null);
 		btEqual.setBorder(null);
 		
+		// Define o tamanho preferivel para os botões
 		btAdd.setPreferredSize(new Dimension(50,50));
 
+		// remove o foco dos botões
+		btAdd.setFocusable(false);
+		btSub.setFocusable(false);
+		btMul.setFocusable(false);
+		btDiv.setFocusable(false);
+		btClear.setFocusable(false);
+		btEqual.setFocusable(false);
+		
 		// Define a cor de fundo
 		btAdd.setBackground(new Color(0xa1aad3));
 		btSub.setBackground(new Color(0xa1aad3));
@@ -98,29 +107,29 @@ public class OperationPanel extends JPanel implements ActionListener {
 		JButton btn = (JButton) e.getSource();
 		
 		if (btn == btClear) {
-			op = null;
+			op = '\u0000';
 			displayField.setText("");
 		} else if (btn == btEqual) {
 			value2 = Double.parseDouble(displayField.getText());
 			
 			double result = 0;
 			
-			if (op == "+") {
+			if (op == '+') {
 				result = value1 + value2;
-			} else if (op == "-") {
+			} else if (op == '-') {
 				result = value1 - value2;
-			} else if (op == "*") {
+			} else if (op == 'x') {
 				result = value1 * value2;
-			} else if (op == "/") {
+			} else if (op == '/') {
 				result = value1 / value2;
 			}
 			
 			displayField.setText(String.valueOf(result));
-			op = null;
+			op = '\u0000';
 			value1 = result;
 			value2 = 0;
 		} else {
-			op = btn.getText();
+			op = btn.getText().charAt(0);
 			value1 = Double.parseDouble(displayField.getText());
 			displayField.setText("");
 		}

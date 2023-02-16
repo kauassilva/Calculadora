@@ -17,7 +17,7 @@ public class TextPanel extends JPanel {
 		displayField.setBackground(Color.DARK_GRAY);
 		displayField.setBorder(null);
 		displayField.setForeground(Color.WHITE);
-		displayField.setFont(new Font("Roboto",Font.PLAIN,50));
+		displayField.setFont(new Font("Roboto",Font.PLAIN,30));
 		
 		add(displayField);
 	}

@@ -61,6 +61,19 @@ public class NumberPanel extends JPanel implements ActionListener {
 		bt0.setBorder(null);
 		btEmpty1.setBorder(null);
 		btEmpty2.setBorder(null);
+		
+		// Remove o foco dos botões
+		bt9.setFocusable(false);
+		bt8.setFocusable(false);
+		bt7.setFocusable(false);
+		bt6.setFocusable(false);
+		bt5.setFocusable(false);
+		bt4.setFocusable(false);
+		bt3.setFocusable(false);
+		bt2.setFocusable(false);
+		bt1.setFocusable(false);
+		bt0.setFocusable(false);
+		
 		// Define a cor de fundo
 		bt9.setBackground(Color.GRAY);
 		bt8.setBackground(Color.GRAY);
@@ -74,6 +87,7 @@ public class NumberPanel extends JPanel implements ActionListener {
 		bt0.setBackground(Color.GRAY);
 		btEmpty1.setBackground(Color.DARK_GRAY);
 		btEmpty2.setBackground(Color.DARK_GRAY);
+		
 		// Define a cor da fonte
 		bt9.setForeground(Color.WHITE);
 		bt8.setForeground(Color.WHITE);
@@ -85,6 +99,7 @@ public class NumberPanel extends JPanel implements ActionListener {
 		bt2.setForeground(Color.WHITE);
 		bt1.setForeground(Color.WHITE);
 		bt0.setForeground(Color.WHITE);
+		
 		// Define a fonte
 		bt9.setFont(new Font("Roboto",Font.BOLD,16));
 		bt8.setFont(new Font("Roboto",Font.BOLD,16));
@@ -118,9 +133,9 @@ public class NumberPanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// Limitar quantidade de caracteres
-		/*if (displayField.getText().length() == 10) {
+		if (displayField.getText().length() == 10) {
 			return;
-		}*/
+		}
 		
 		JButton btn = (JButton) e.getSource();
 		String number = btn.getText();
