@@ -11,7 +11,7 @@ public class TextPanel extends JPanel {
 		setLayout(new BorderLayout());
 		
 		displayField = new JTextField();
-		displayField.setPreferredSize(new Dimension(100,130));
+		displayField.setPreferredSize(new Dimension(100,100));
 		displayField.setHorizontalAlignment(JTextField.RIGHT);
 		displayField.setEditable(false);
 		displayField.setBackground(Color.DARK_GRAY);

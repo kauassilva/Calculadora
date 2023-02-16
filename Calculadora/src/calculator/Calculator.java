@@ -13,14 +13,16 @@ public class Calculator extends JFrame {
 		setTitle("Calculadora");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(340,450);
+		setMinimumSize(new Dimension(320,400));
 		setLayout(new BorderLayout());
 		
 		TextPanel textPanel = new TextPanel();
 		
 		JPanel buttonPanel = new JPanel();
-		buttonPanel.setLayout(new BorderLayout());
+		buttonPanel.setLayout(new BorderLayout(2,2));
 		buttonPanel.add(new NumberPanel(textPanel.getDisplayField()), BorderLayout.CENTER);
 		buttonPanel.add(new OperationPanel(textPanel.getDisplayField()), BorderLayout.EAST);
+		buttonPanel.setBackground(Color.DARK_GRAY);
 		
 		add(textPanel, BorderLayout.NORTH);
 		add(buttonPanel, BorderLayout.CENTER);
